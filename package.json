@@ -1,0 +1,31 @@
+{
+  "name": "an-todo",
+  "version": "1.0.0",
+  "description": "Simple fullstack angular todo app tutorial",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "dev": "webpack && node server"
+  },
+  "author": "Jarec Turner",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.6",
+    "angular-resource": "^1.6.6",
+    "angular-ui-router": "^0.4.3",
+    "body-parser": "^1.18.2",
+    "bootstrap": "^3.3.7",
+    "express": "^4.16.2",
+    "mongoose": "^4.12.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "morgan": "^1.9.0",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.3"
+  }
+}

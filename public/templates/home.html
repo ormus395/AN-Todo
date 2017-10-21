@@ -1,0 +1,19 @@
+<div class="jumbotron">
+  <from class="form-group">
+    <h1>Add a todo</h1>
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input ng-model="controller.todo.title" type="text" class="form-control" id="title" name="title" placeholder="Title">
+    </div>
+    <div class="form-group">
+      <label for="details">Details</label>
+      <textarea ng-model="controller.todo.details" class="form-control" id="details" rows="3" name="details"></textarea>
+    </div>
+    <button class="btn btn-primary" onClick="location.reload()" ng-click="controller.addTodo()">Submit</button>
+  </from>
+</div>
+<div>
+  <ul class="list-group">
+    <li ng-repeat="t in controller.todos" class="list-group-item mb-2"> <h3>{{t.title}}</h3> <p>{{t.details}}</p> <button class="btn btn-danger" ng-click="controller.deleteTodo(t._id)">Delete</button></li>
+  </ul>
+</div>
