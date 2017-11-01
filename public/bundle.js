@@ -39628,7 +39628,7 @@ var TodoService = exports.TodoService = function () {
   }, {
     key: 'editTodo',
     value: function editTodo(todo, id) {
-      return this.TodoEditResource.save(todo).$promise;
+      return this.TodoEditResource.save({ id: _id }, todo).$promise;
     }
   }]);
 
@@ -39672,11 +39672,11 @@ var TodoController = exports.TodoController = function () {
     value: function deleteTodo(_id) {
       console.log(_id);
       this.todoService.deleteTodo(_id);
-      for (var i = 0; i < this.todos.length; i++) {
-        if (this.todos[i]._id == _id) {
+      /*for(let i = 0; i < this.todos.length; i++) {
+        if(this.todos[i]._id == _id) {
           this.todos.splice(i, 1);
         }
-      }
+      }*/
     }
   }]);
 

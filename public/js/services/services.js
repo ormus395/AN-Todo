@@ -1,4 +1,5 @@
 export class TodoService {
+  
   constructor($resource) {
     this.GetTodoResource = $resource('/api/todos');
     this.TodoDeleteReource = $resource('/api/todos/:id');
@@ -19,8 +20,9 @@ export class TodoService {
   }
 
   editTodo(todo, id) {
-    return this.TodoEditResource.save(todo).$promise;
+    return this.TodoEditResource.save({id: _id}, todo).$promise;
   }
+
 }
 
 TodoService.$inject = ['$resource'];

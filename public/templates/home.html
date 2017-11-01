@@ -9,11 +9,14 @@
       <label for="details">Details</label>
       <textarea ng-model="controller.todo.details" class="form-control" id="details" rows="3" name="details"></textarea>
     </div>
-    <button class="btn btn-primary" onClick="location.reload()" ng-click="controller.addTodo()">Submit</button>
+    <button class="btn btn-primary" ng-click="controller.addTodo()">Submit</button>
   </from>
 </div>
 <div>
   <ul class="list-group">
-    <li ng-repeat="t in controller.todos" class="list-group-item mb-2"> <h3>{{t.title}}</h3> <p>{{t.details}}</p> <button class="btn btn-danger" ng-click="controller.deleteTodo(t._id)">Delete</button></li>
+    <li ng-repeat="t in controller.todos" class="list-group-item mb-2"> 
+      <h3>{{t.title}}</h3> <p>{{t.details}}</p> 
+      <button class="btn btn-danger" ng-click="controller.deleteTodo(t._id)">Delete</button>
+    </li>
   </ul>
 </div>

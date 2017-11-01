@@ -2,14 +2,13 @@ const express = require('express');
 const router = express.Router();
 const Todo = require('../models/Todos');
 
+
 router.get('/', (req, res) => {
   Todo.find({})
-    .sort({date: 'descending'})
     .then(todo => {
       res.json(todo)
     });
 });
-
 
 router.post('/add', (req, res) => {
   let newTodo = {
@@ -43,5 +42,7 @@ router.delete('/:id', (req, res) => {
       res.json({success: true, message: 'Todo deleted'})
     });
 });
+
+
 
 module.exports = router;

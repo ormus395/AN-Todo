@@ -1,3 +1,11 @@
+/* 
+  1, Go over starting the app
+  2, open up project
+  3, install the dependencies
+  4, create express app
+
+*/
+
 //Libs / dependencies
 /*
 
@@ -35,7 +43,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 const todos = require('./routes/Todos');
 app.use('/api/todos', todos);
 
-app.use('/*', (req, res) => { 
-})
+/*app.use('/*', (req, res) => { 
+})*/
 
 app.listen(port, () => console.log(`Server started on ${port}`));
