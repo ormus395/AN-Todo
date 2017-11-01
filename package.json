@@ -4,7 +4,7 @@
   "description": "Simple fullstack angular todo app tutorial",
   "main": "server.js",
   "scripts": {
-    "start": "node server",
+    "start": "webpack && node server",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "dev": "webpack && node server"
