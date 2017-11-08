@@ -20,7 +20,7 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const morgan = require('morgan');
+//const morgan = require('morgan');
 
 // global app variable for express, and server port
 const app = express();
