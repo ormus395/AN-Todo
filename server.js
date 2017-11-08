@@ -33,7 +33,7 @@ mongoose.connect('mongodb://admin:admin@ds062448.mlab.com:62448/angular-todo')
 ;
 
 //Other MW/Dependencies
-app.use(morgan('dev'));
+//app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
