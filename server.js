@@ -41,7 +41,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')))
 console.log(__dirname + '/public/index.html')
 //Dev made Dependencies/MW
-const todos = require('./routes/Todos');
+const todos = require('./routes/todos');
 app.use('/api/todos', todos);
 
 app.get('/*', (req, res) => { 
