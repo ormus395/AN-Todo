@@ -35,15 +35,17 @@ mongoose.connect('mongodb://admin:admin@ds062448.mlab.com:62448/angular-todo')
 //Other MW/Dependencies
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser(bodyParser.json()));
+app.use(bodyParser.json());
 
 //public
 app.use(express.static(path.join(__dirname, 'public')))
+console.log(__dirname + '/public/index.html')
 //Dev made Dependencies/MW
 const todos = require('./routes/Todos');
 app.use('/api/todos', todos);
 
-/*app.use('/*', (req, res) => { 
-})*/
+app.get('/*', (req, res) => { 
+  res.sendFile('index.html')
+})
 
 app.listen(port, () => console.log(`Server started on ${port}`));

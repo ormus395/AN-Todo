@@ -5,19 +5,23 @@ export class TodoController {
     this.todos = TodoService.getTodos();
   }
 
-  addTodo() {
-    this.todoService.addTodo(this.todo);
-    this.todos.push(this.todo);
+  addTodo(title, details) {
+    let todo = {
+      title: title,
+      details: details
+    }
+    this.todoService.addTodo(todo);
+    this.todos.push(todo);
   }
 
   deleteTodo(_id) {
     console.log(_id)
     this.todoService.deleteTodo(_id);
-    /*for(let i = 0; i < this.todos.length; i++) {
+    for(let i = 0; i < this.todos.length; i++) {
       if(this.todos[i]._id == _id) {
         this.todos.splice(i, 1);
       }
-    }*/
+    }
   }
 }
 

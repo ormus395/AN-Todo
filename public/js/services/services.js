@@ -1,6 +1,6 @@
 export class TodoService {
   
-  constructor($resource) {
+  constructor($resource, $http) {
     this.GetTodoResource = $resource('/api/todos');
     this.TodoDeleteReource = $resource('/api/todos/:id');
     this.TodoAddReource = $resource('/api/todos/add');
@@ -25,4 +25,4 @@ export class TodoService {
 
 }
 
-TodoService.$inject = ['$resource'];
+TodoService.$inject = ['$resource', '$http'];

@@ -39663,20 +39663,24 @@ var TodoController = exports.TodoController = function () {
 
   _createClass(TodoController, [{
     key: 'addTodo',
-    value: function addTodo() {
-      this.todoService.addTodo(this.todo);
-      this.todos.push(this.todo);
+    value: function addTodo(title, details) {
+      var todo = {
+        title: title,
+        details: details
+      };
+      this.todoService.addTodo(todo);
+      this.todos.push(todo);
     }
   }, {
     key: 'deleteTodo',
     value: function deleteTodo(_id) {
       console.log(_id);
       this.todoService.deleteTodo(_id);
-      /*for(let i = 0; i < this.todos.length; i++) {
-        if(this.todos[i]._id == _id) {
+      for (var i = 0; i < this.todos.length; i++) {
+        if (this.todos[i]._id == _id) {
           this.todos.splice(i, 1);
         }
-      }*/
+      }
     }
   }]);
 
