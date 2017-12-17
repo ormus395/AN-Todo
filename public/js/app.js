@@ -7,7 +7,7 @@ import {TodoController, AboutController} from './controllers/controllers';
 
 //Instatiate global app variable
 
-angular.module('TodoApp', [uirouter, ngResource]).service('TodoService', TodoService).config(routing);
+var app = angular.module('TodoApp', [uirouter, ngResource]).service('TodoService', TodoService).config(routing);
 
 routing.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
 

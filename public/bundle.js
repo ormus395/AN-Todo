@@ -90,7 +90,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 //Instatiate global app variable
 
-_angular2.default.module('TodoApp', [_angularUiRouter2.default, _angularResource2.default]).service('TodoService', _services.TodoService).config(routing);
+var app = _angular2.default.module('TodoApp', [_angularUiRouter2.default, _angularResource2.default]).service('TodoService', _services.TodoService).config(routing);
 
 routing.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
 

@@ -16,6 +16,7 @@
   and body-parser is our body parsing middleware used for easy HTTP request body parsing
 
 */
+
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
@@ -37,15 +38,18 @@ mongoose.connect('mongodb://admin:admin@ds062448.mlab.com:62448/angular-todo')
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.set('view engine', 'ejs');
+
 //public
-app.use(express.static(path.join(__dirname, 'public')))
-console.log(__dirname + '/public/index.html')
+app.use(express.static(path.join(__dirname, 'public')));
+
 //Dev made Dependencies/MW
 const todos = require('./routes/todos');
+
 app.use('/api/todos', todos);
 
 app.get('/*', (req, res) => { 
-  res.sendFile('index.html')
+  res.render('index')
 })
 
 app.listen(port, () => console.log(`Server started on ${port}`));
